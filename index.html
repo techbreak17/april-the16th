@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="stars"></div>
+        <div class="hearts"></div>
+        <div class="balloons"></div>
+    </div>
+    <div class="content">
+        <img id="cakeImage" class="cake" src="cake.png" alt="Birthday Cake">
+        <h1>Happy Birthday Raanisaheba!</h1>
+        <div class="upload-container">
+            <label for="imageInput" class="image-upload">
+                <div class="image-preview" id="imagePreview"></div>
+            </label>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            
+            <div class="message-box" id="messageBox" onclick="changeMessage()">
+                STAB ME WITH A CLICK!
+            </div>
+        </div>
+        
+        <div class="guitar-container">
+            <img id="guitarImage" class="bouncy-guitar" src="guitar.png" alt="Bouncy Guitar">
+            <input type="file" id="audioInput" accept="audio/*" style="display: none;">
+        </div>
+        
+        <!-- Gift Box -->
+        <div class="gift-box-container">
+            <label for="giftBoxInput" class="gift-box-upload">
+                <img id="giftBoxImage" class="gift-box" src="giftbox.png" alt="Gift Box">
+            </label>
+            <input type="file" id="giftBoxInput" accept="image/*" style="display: none;">
+        </div>
+        
+    </div>
+    <audio id="audioPlayer" controls style="display: none;"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

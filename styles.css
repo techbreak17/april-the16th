@@ -1,0 +1,154 @@
+/* Existing styles remain unchanged */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6e8fbd, #ff7f7f);
+    overflow: hidden;
+}
+
+.stars, .hearts, .balloons {
+    position: absolute;
+    bottom: -100px; /* Start off-screen */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.stars img, .hearts img, .balloons img {
+    width: 50px; /* Adjust size for each */
+    animation: moveUp 5s linear infinite;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh); /* Move to top */
+        opacity: 0; /* Fade out */
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Added margin to push content down */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+.upload-container {
+    display: flex;  /* Use Flexbox to arrange image upload and message box */
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Center horizontally */
+}
+
+.image-upload {
+    margin-right: 20px; /* Space between image and message box */
+    cursor: pointer; /* Indicate clickable area */
+}
+
+.image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* White background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%; /* Ensure image is circular */
+}
+
+.guitar-container {
+    position: relative;
+    margin-top: 40px; /* Increased margin to give space above */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouncy-guitar {
+    width: 150px; /* Set appropriate size for the guitar */
+    animation: bounce 0.5s infinite alternate;
+    cursor: pointer; /* Indicate clickable area */
+    margin-top: 20px;
+    display: block; /* Ensure the guitar image is displayed */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Styles for the message box */
+.message-box {
+    width: 400px; /* Width of the message box when expanded */
+    padding: 20px; /* Padding inside the box */
+    background-color: white; /* White background */
+    color: blue; /* Blue text color */
+    border: 2px solid pink; /* Pink border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 1.2em; /* Font size */
+    max-height: 150px; /* Initial max height for single line */
+    transition: all 0.5s ease; /* Smooth transition on click */
+    overflow: hidden; /* Hide overflow initially */
+}
+
+.message-box.expanded {
+    max-height: 300px; /* Expanded max height */
+}
+
+/* Styles for the cake image */
+.cake {
+    position: absolute; /* Position it relative to its containing block */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    width: 200px; /* Adjust width of the cake image */
+    height: auto; /* Automatic height to maintain aspect ratio */
+    z-index: 10; /* Make sure it's on top */
+}
+
+/* Styles for the gift box */
+.gift-box-container {
+    position: absolute; /* Position relative to the content */
+    bottom: 5px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+}
+
+.gift-box {
+    width: 230px; /* Width of the gift box image */
+    height: 230px; /* Height of the gift box image */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+    cursor: pointer; /* Indicate clickable area */
+}
